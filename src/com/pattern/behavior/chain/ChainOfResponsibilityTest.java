@@ -5,6 +5,10 @@ import com.pattern.behavior.chain.handler.*;
 /**
  * 责任链模式测试
  *
+ * 责任链模式(Chain of Responsibility)：
+ *      使多个对象都有机会处理请求，从而避免请求的发送者和接受者之间的耦合关系。
+ *      将这些对象连成一条链，并沿着这条链传递该请求，直到有对象能够处理它
+ *
  * @author marxbo
  * @version 1.0
  * @date 2020/2/2 12:57
