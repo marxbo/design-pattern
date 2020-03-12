@@ -1,4 +1,4 @@
-package com.pattern.creation.factory;
+package com.pattern.creation.factory.model.milk;
 
 /**
  * 蒙牛

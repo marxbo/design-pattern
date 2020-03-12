@@ -1,9 +1,12 @@
 package com.pattern.creation.factory.abs;
 
-import com.pattern.creation.factory.Milk;
+import com.pattern.creation.factory.model.milk.Milk;
+import com.pattern.creation.factory.model.tea.Tea;
 
 /**
- * 抽象工厂：统一入口
+ * 抽象工厂：提供一个【创建一系列相关或相互依赖对象】的接口，无需指定具体的类。
+ *
+ * 与工厂方法的区别：抽象工厂解决的是横向的产品族，而工厂方法解决的是纵向的产品等级。
  *
  * @author marxbo
  * @version 1.0
@@ -11,10 +14,18 @@ import com.pattern.creation.factory.Milk;
  */
 public abstract class AbstractFactory {
 
-    abstract Milk getMengniu();
+    /**
+     * 生产牛奶
+     *
+     * @return Milk
+     */
+    abstract Milk getMilk();
 
-    abstract Milk getTelunsu();
-
-    abstract Milk getYili();
+    /**
+     * 生产茶水
+     *
+     * @return Tea
+     */
+    abstract Tea getTea();
 
 }

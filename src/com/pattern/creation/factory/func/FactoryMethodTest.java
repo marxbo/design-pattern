@@ -1,6 +1,11 @@
 package com.pattern.creation.factory.func;
 
-import com.pattern.creation.factory.Milk;
+import com.pattern.creation.factory.func.milk.MengniuFactory;
+import com.pattern.creation.factory.func.milk.MilkFactory;
+import com.pattern.creation.factory.func.tea.GreenTeaFactory;
+import com.pattern.creation.factory.func.tea.TeaFactory;
+import com.pattern.creation.factory.model.milk.Milk;
+import com.pattern.creation.factory.model.tea.Tea;
 
 /**
  * 工厂方法测试
@@ -12,9 +17,13 @@ import com.pattern.creation.factory.Milk;
 public class FactoryMethodTest {
 
     public static void main(String[] args) {
-        Factory factory = new MengniuFactory();
-        Milk milk = factory.getMilk();
+        MilkFactory milkFactory = new MengniuFactory();
+        Milk milk = milkFactory.getMilk();
         System.out.println(milk);
+
+        TeaFactory teaFactory = new GreenTeaFactory();
+        Tea tea = teaFactory.getTea();
+        System.out.println(tea);
     }
 
 }
