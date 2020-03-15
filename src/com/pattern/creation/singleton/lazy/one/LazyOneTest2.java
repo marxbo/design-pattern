@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.one;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -9,15 +9,17 @@ import java.util.concurrent.CountDownLatch;
  * @version 1.0
  * @date 2019/10/27 21:20
  */
-public class LazyOneTest {
+public class LazyOneTest2 {
 
     public static void main(String[] args) {
 
-        // CountDownLatch的2个使用场景：
-        // (1) 作为一个开关，N个子线程准备就绪，等待主线程的放行，然后子线程一起开始执行
-        //      【CountDownLatch为1、线程中await、主线程countDown】
-        // (2) 主线程等待N个子线程的处理结果，子线程都完成后，主线程继续执行
-        //      【CountDownLatch为线程个数、线程中countDown、主线程await】
+        /**
+         * CountDownLatch的2个使用场景：
+         * (1) 作为一个开关，N个子线程准备就绪，等待主线程的放行，然后子线程一起开始执行
+         *      【CountDownLatch为1、线程中await、主线程countDown】
+         * (2) 主线程等待N个子线程的处理结果，子线程都完成后，主线程继续执行
+         *      【CountDownLatch为线程个数、线程中countDown、主线程await】
+         */
 
         // CountDownLatch的第2个使用场景
         CountDownLatch latch = new CountDownLatch(1);

@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.two;
 
 /**
  * 懒汉单例模式-加同步锁【用性能换取线程安全】
@@ -20,7 +20,11 @@ public class LazyTwo {
     private static LazyTwo lazy = null;
 
     /**
-     * 全局访问点
+     * 全局访问点-直接加同步锁
+     *
+     * IDEA多线程模式Debug时，当第一个线程【RUNNING状态】正在执行getInstance()同步方法，
+     * 第二个线程也进入该方法，出现阻塞【RUNNING变成MONITOR状态】，直到第一个线程执行完同步方法，
+     * 第二个线程【MONITOR变成RUNNING状态】才能继续执行。
      *
      * @return LazyTwo
      */

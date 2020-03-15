@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.two;
 
 /**
  * 懒汉单例模式(1)和(2)性能测试-加同步锁【用性能换取线程安全】
@@ -7,7 +7,7 @@ package com.pattern.creation.singleton.lazy;
  * @version 1.0
  * @date 2019/10/27 21:20
  */
-public class LazyTwoTest {
+public class LazyTwoTest2 {
 
     public static void main(String[] args) {
         int count = 10000000;
@@ -15,7 +15,7 @@ public class LazyTwoTest {
         for (int i = 0; i < count; i++) {
             // 懒汉模式不加同步锁耗时：4
             // LazyOne instance = LazyOne.getInstance();
-            // 懒汉模式不加同步锁耗时：158
+            // 懒汉模式加同步锁耗时：158
             LazyTwo instance = LazyTwo.getInstance();
         }
         long endTime = System.currentTimeMillis();

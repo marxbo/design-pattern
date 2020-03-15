@@ -6,30 +6,24 @@ package com.pattern.creation.singleton.register;
  *
  * @author marxbo
  * @version 1.0
- * @date 2019/11/4 1:01
+ * @date 2020/3/14 23:53
  */
 public enum RegisterEnum {
 
-    /**
-     * 枚举对象是天然线程安全的单例
-     */
-    SINGLETON_ONE("a", "b"),
-    SINGLETON_TWO("A", "B");
+    /** 单例 */
+    INSTANCE;
 
-    /** a属性 */
-    private String a;
-    /** b属性 */
-    private String b;
+    private Object data;
 
-    /**
-     * 有参构造器
-     *
-     * @param a a属性
-     * @param b b属性
-     */
-    private RegisterEnum(String a, String b) {
-        this.a = a;
-        this.b = b;
+    public static RegisterEnum getInstance() {
+        return INSTANCE;
     }
 
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 }

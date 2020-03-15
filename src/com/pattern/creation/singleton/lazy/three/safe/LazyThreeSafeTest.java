@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.three.safe;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

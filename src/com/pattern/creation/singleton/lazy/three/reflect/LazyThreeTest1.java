@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.three.reflect;
 
 import java.util.concurrent.CountDownLatch;
 

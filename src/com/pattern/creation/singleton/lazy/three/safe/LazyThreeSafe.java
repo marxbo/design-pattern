@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.lazy;
+package com.pattern.creation.singleton.lazy.three.safe;
 
 /**
  * 懒汉单例模式-静态内部类【线程安全且防止反射侵入破坏单例】
@@ -20,7 +20,7 @@ public class LazyThreeSafe {
             if (!initialized) {
                 initialized = !initialized;
             } else {
-                throw new RuntimeException("单例已被侵犯！");
+                throw new RuntimeException("单例对象不允许创建多个实例！");
             }
         }
     }
@@ -37,7 +37,7 @@ public class LazyThreeSafe {
      *
      * @return LazyThree
      */
-    public static LazyThreeSafe getInstance() {
+    public static final LazyThreeSafe getInstance() {
         return StaticInnerLazy.LAZY_THREE;
     }
 
