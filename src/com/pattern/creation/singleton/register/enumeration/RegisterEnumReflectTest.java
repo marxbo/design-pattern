@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.register;
+package com.pattern.creation.singleton.register.enumeration;
 
 import java.lang.reflect.Constructor;
 

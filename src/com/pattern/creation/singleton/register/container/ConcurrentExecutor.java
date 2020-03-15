@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.register;
+package com.pattern.creation.singleton.register.container;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

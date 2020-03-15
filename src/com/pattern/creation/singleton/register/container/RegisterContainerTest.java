@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.register;
+package com.pattern.creation.singleton.register.container;
 
 /**
  * 注册式单例测试-容器缓存式单例【IOC中的单例模式即容器缓存式单例】

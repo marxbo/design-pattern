@@ -1,4 +1,4 @@
-package com.pattern.creation.singleton.register;
+package com.pattern.creation.singleton.register.enumeration;
 
 /**
  * 注册式单例-枚举式单例【线程安全、避免反射和反序列化侵入破坏单例】
