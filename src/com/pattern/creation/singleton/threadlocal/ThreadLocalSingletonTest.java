@@ -1,7 +1,7 @@
 package com.pattern.creation.singleton.threadlocal;
 
 /**
- * ThreadLocal单例测试【同个线程中保证单例，天然线程安全】
+ * ThreadLocal单例测试【同个线程中保证单例，天然线程安全，以空间换时间】
  *
  * @author marxbo
  * @version 1.0
@@ -11,8 +11,6 @@ public class ThreadLocalSingletonTest {
 
     public static void main(String[] args) {
         // 主线程线程安全，保证单例
-        System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
-        System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
         System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
         System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
         System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
@@ -31,6 +29,8 @@ class ExectorThread implements Runnable {
 
     @Override
     public void run() {
+        System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
+        System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
         System.out.println(Thread.currentThread() + ":" + ThreadLocalSingleton.getInstance());
     }
 

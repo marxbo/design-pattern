@@ -1,7 +1,7 @@
 package com.pattern.creation.singleton.threadlocal;
 
 /**
- * ThreadLocal单例【同个线程中保证单例，天然线程安全】
+ * ThreadLocal单例【同个线程中保证单例，天然线程安全，以空间换时间】
  *
  * @author marxbo
  * @version 1.0
