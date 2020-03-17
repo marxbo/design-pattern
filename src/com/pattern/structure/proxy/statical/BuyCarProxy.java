@@ -14,24 +14,24 @@ package com.pattern.structure.proxy.statical;
  * @version 1.0
  * @date 2019/11/24 15:35
  */
-public class BuyHouseProxy implements IBuyHouse {
+public class BuyCarProxy implements IBuyCar {
 
-    private IBuyHouse buyer;
+    private IBuyCar buyer;
 
     /**
      * 代理对象只能代理继承同一个接口的目标对象
      *
      * @param buyer
      */
-    public BuyHouseProxy(IBuyHouse buyer) {
+    public BuyCarProxy(IBuyCar buyer) {
         this.buyer = buyer;
     }
 
     @Override
-    public void buyHouse() {
-        System.out.println("买房前");
-        buyer.buyHouse();
-        System.out.println("买房后");
+    public void buyCar() {
+        System.out.println("买车前");
+        buyer.buyCar();
+        System.out.println("买车后");
     }
 
 }
