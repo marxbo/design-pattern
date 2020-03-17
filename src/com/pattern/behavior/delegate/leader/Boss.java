@@ -11,7 +11,8 @@ public class Boss {
 
     /**
      * 客户请求(Boss)、委派者(Leader)、被委派者(ITarget)
-     * 委派者要持有被委派者的引用
+     * 委派者要持有被委派者的引用。
+     * 核心：分发、调度、派遣
      *
      * 委派模式：【静态代理】和【策略模式】的一种特殊组合
      * 代理模式：注重过程；  委派模式：注重结果；
@@ -19,7 +20,17 @@ public class Boss {
      */
 
     public static void main(String[] args) {
-        new Leader().doing("登录");
+        new Boss().command("登录", new Leader());
+    }
+
+    /**
+     * 委派Leader分发任务
+     *
+     * @param command
+     * @param leader
+     */
+    public void command(String command, Leader leader) {
+        leader.doing(command);
     }
 
 }
