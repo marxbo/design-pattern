@@ -14,11 +14,11 @@ public class CustomProxyTest {
 
     public static void main(String[] args) {
         // 目标对象
-        IBuyHouse buyer = new Consumer();
+        IBuyHouse houseBuyer = new Consumer();
         // 动态代理处理类
         CustomProxyHandler customProxyHandler = new CustomProxyHandler();
         // 在内存中动态生成代理对象
-        IBuyHouse proxy = (IBuyHouse) customProxyHandler.getProxyInstance(buyer);
+        IBuyHouse proxy = (IBuyHouse) customProxyHandler.getProxyInstance(houseBuyer);
         System.out.println(proxy.getClass());
         proxy.buyHouse();
     }

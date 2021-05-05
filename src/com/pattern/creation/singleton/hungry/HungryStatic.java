@@ -15,6 +15,12 @@ public class HungryStatic {
     private HungryStatic() {}
 
     /**
+     * new一个对象的执行顺序：
+     * ①静态代码块/静态变量(按代码顺序) ②初始化成员变量 ③构造代码块执行 ④构造方法
+     * 注意：如果之前已经加载过类了，静态代码块就不执行了。
+     */
+
+    /**
      * 静态常量
      */
     private static final HungryStatic HUNGRY;

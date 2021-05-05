@@ -1,7 +1,7 @@
 package com.pattern.creation.singleton.lazy.three.reflect;
 
 /**
- * 懒汉单例模式-静态内部类【线程安全、但存在反射侵入破坏单例】
+ * 懒汉单例模式-静态内部类【延迟加载、线程安全、但存在反射侵入破坏单例】
  *
  * @author marxbo
  * @version 1.0

@@ -45,7 +45,7 @@ public class ClassLoader extends java.lang.ClassLoader {
                     while ((len = in.read(buff)) != -1) {
                         out.write(buff, 0, len);
                     }
-                    // 把字节码转化为Class
+                    // 把字节码转化为Class对象（类加载）
                     return defineClass(className, out.toByteArray(), 0, out.size());
                 } catch (Exception e) {
                     e.printStackTrace();

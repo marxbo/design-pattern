@@ -15,6 +15,13 @@ import com.pattern.creation.factory.model.tea.Tea;
 public abstract class AbstractFactory {
 
     /**
+     * 抽象工厂定义产品族各产品，工厂实现类具体实现各产品（每个具体工厂负责一个抽象工厂方法接口的实现）
+     *
+     * 横轴-产品族：一系列产品（不同产品）
+     * 纵轴-产品等级：生产一系列产品的不同工厂
+     */
+
+    /**
      * 生产牛奶
      *
      * @return Milk

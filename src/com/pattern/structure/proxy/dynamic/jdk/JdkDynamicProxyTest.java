@@ -1,6 +1,7 @@
 package com.pattern.structure.proxy.dynamic.jdk;
 
 import com.pattern.structure.proxy.statical.Consumer;
+import com.pattern.structure.proxy.statical.IBuyCar;
 import com.pattern.structure.proxy.statical.IBuyHouse;
 import sun.misc.ProxyGenerator;
 
@@ -18,16 +19,19 @@ public class JdkDynamicProxyTest {
 
     public static void main(String[] args) throws IOException {
         // 目标对象
-        IBuyHouse buyer = new Consumer();
+        IBuyHouse houseBuyer = new Consumer();
         // 动态代理处理类
         JdkDynamicProxyHandler dynamicProxyHandler = new JdkDynamicProxyHandler();
         // 在内存中动态生成代理对象
-        IBuyHouse proxy = (IBuyHouse) dynamicProxyHandler.getProxyInstance(buyer);
+        IBuyHouse houseProxy = (IBuyHouse) dynamicProxyHandler.getProxyInstance(houseBuyer);
+        IBuyCar carProxy = (IBuyCar) dynamicProxyHandler.getProxyInstance(houseBuyer);
         // 下一行代码这样写会调到代理对象的toString方法
         // System.out.println(proxy);
         // 下面代码输出：class com.sun.proxy.$Proxy0
-        System.out.println(proxy.getClass());
-        proxy.buyHouse();
+        System.out.println(houseProxy.getClass());
+        houseProxy.buyHouse();
+        System.out.println(carProxy.getClass());
+        carProxy.buyCar();
 
         // 生成代理代理类的字节码文件
         byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IBuyHouse.class});

@@ -12,7 +12,7 @@ import java.lang.reflect.Constructor;
 public class RegisterEnumReflectTest {
 
     public static void main(String[] args) throws Exception {
-        // Enum只有一个protected的构造方法：protected Enum(String name, int ordinal) {}
+        // Enum抽象类只有一个protected的构造方法：protected Enum(String name, int ordinal) {}
         Class<RegisterEnum> clazz = RegisterEnum.class;
         Constructor<RegisterEnum> c = clazz.getDeclaredConstructor(String.class, int.class);
         c.setAccessible(true);

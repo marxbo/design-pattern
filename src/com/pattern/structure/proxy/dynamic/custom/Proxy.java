@@ -27,7 +27,7 @@ public class Proxy {
             // 1、动态生成源代码.java文件
             String src = generateSrc(interfaces);
 
-            // 2、.java文件输出磁盘
+            // 2、.java文件输出磁盘（编译前必须先存盘）
             String filePath = Proxy.class.getResource("").getPath();
             File file = new File(filePath + "$Proxy0.java");
             FileWriter fw = new FileWriter(file);
@@ -47,7 +47,7 @@ public class Proxy {
             Class<?> proxyClass = classLoader.findClass("$Proxy0");
             Constructor<?> constructor = proxyClass.getConstructor(InvocationHandler.class);
 
-            // 5、返回字节码重组以后的新的代理对象
+            // 5、返回字节码重组以后的新的代理对象（传入动态代理对象）
             return constructor.newInstance(h);
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,9 +68,9 @@ public class Proxy {
         sb.append("import java.lang.reflect.Method;" + LN);
         sb.append("import com.pattern.structure.proxy.statical.IBuyHouse;" + LN);
         sb.append("public class $Proxy0 implements " + interfaces[0].getName() + "{" + LN);
-
+            // 动态代理对象成员
             sb.append("InvocationHandler h;" + LN);
-            // 构造函数
+            // 构造函数（传入动态代理对象）
             sb.append("public $Proxy0(InvocationHandler h) {" + LN);
                 sb.append("this.h = h;" + LN);
             sb.append("}" + LN);
